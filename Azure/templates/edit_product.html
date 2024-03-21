@@ -1,0 +1,58 @@
+<!-- edit_product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form action="/edit/{{ product[0] }}" method="post">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" value="{{ product[1] }}" required><br>
+        
+        <label for="description">Product Description:</label>
+        <textarea id="description" name="description">{{ product[2] }}</textarea><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+    <button onclick="location.href='/index'">Back</button>
+</body>
+</html>
